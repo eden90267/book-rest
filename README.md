@@ -1,7 +1,15 @@
 # book-rest #
 
-## DDL Script ##
+## DDL Script(mysql version: 5.7.12) ##
+
+    # for 5.7.x
+    SET GLOBAL  validate_password_policy='LOW';
+    
     CREATE SCHEMA `books` DEFAULT CHARACTER SET utf8 ;
+
+    CREATE USER booksadmin@localhost IDENTIFIED BY 'bookspassword';
+    GRANT ALL PRIVILEGES ON books.* TO booksadmin@localhost IDENTIFIED BY 'bookspassword';
+    FLUSH PRIVILEGES;
 
     CREATE TABLE `books`.`book` (
       `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
