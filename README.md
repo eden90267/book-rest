@@ -24,6 +24,8 @@
 ## Step. ##
 
 1. exec DDL Script to mysql(as stated above)
-2. terminal: java -jar build/libs/book-rest-1.0.0.jar
+2. $ cd book-rest
+3. $ gradle clean build
+4. $ java -jar build/libs/book-rest-1.0.0.jar
 
 *P.S. db username and db password must correspond with application.properties
